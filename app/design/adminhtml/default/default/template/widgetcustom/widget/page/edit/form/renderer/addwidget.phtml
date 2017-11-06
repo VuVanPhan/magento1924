@@ -1,0 +1,19 @@
+<div class="wgc-widgets clearfix">
+    <div class="clearfix"></div>
+    <ul id="widgetcustom_widget_form" class="widgets-list" style="">
+        <?php
+        foreach ($this->_getAvailableWidgets() as $data) {
+            ?>
+            <li class="wgc-wg-button" data-group="typo">
+                <div class="wgc-wg-content" id="wgc_<?php echo $data['code']; ?>" data-widget="<?php echo $data['code']; ?>" data-widgettype="<?php echo $data['type'] ?>">
+                    <div class="wgc-wg-icon wgc-icon-<?php echo $data['code']; ?>"></div>
+                    <div class="widget-title"><?php echo Mage::helper('widgetcustom')->__($data['name']); ?></div>
+                    <i class="widget-desc"><?php echo Mage::helper('widgetcustom')->__($data['description']); ?></i>
+                </div>
+            </li>
+            <?php
+        }
+        ?>
+    </ul>
+    <div class="clearfix"></div>
+</div>

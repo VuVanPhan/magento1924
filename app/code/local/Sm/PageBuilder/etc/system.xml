@@ -1,0 +1,106 @@
+<config>
+	<tabs>
+		<sm>
+			<label>Magentech.com</label>
+			<sort_order>205</sort_order>
+		</sm>
+	</tabs>
+	<sections>
+		<pagebuilder translate="label" module="pagebuilder">
+			<label>SM Page Builder</label>
+			<tab>sm</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>150</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<general translate="label">
+					<label>Generel Setting</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>10</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<isenabled translate="label">
+							<label>Enabled Extension</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</isenabled>
+					</fields>
+				</general>
+
+				<advanced translate="label">
+					<label>Advanced Settings</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>45</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<include_jquery translate="label">
+							<label>Include jQuery</label>
+							<frontend_type>radios</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</include_jquery>
+						<use_cache translate="label">
+							<label>Caching</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Select whether to cache the content of this module
+							</comment>
+						</use_cache>
+						<cache_time>
+							<label>Cache Time</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>5</sort_order>
+							<validate>validate-greater-than-zero</validate>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>The time (in seconds) before the module is recached.</comment>
+							<depends>
+								<use_cache>1</use_cache>
+							</depends>
+						</cache_time>
+					</fields>
+				</advanced>
+
+				<product_information translate="label">
+					<label>Product Information</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>50</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<author translate="label">
+							<label><![CDATA[<p>Author: <a target="_blank" title="Magentech" href="http://www.magentech.com">Magentech</a></p>
+											<p>Vesion: 1.0.0</p>
+											<p>Userguide: <a target="_blank" title="Userguide" href="http://www.magentech.com/extensions/extension-user-guides">Userguide</a></p>
+											<p>Support: <a target="_blank" href="http://www.magentech.com/forum">Support</a></p>
+								]]>
+							</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+						</author>
+					</fields>
+				</product_information>
+			</groups>
+		</pagebuilder>
+	</sections>
+</config>

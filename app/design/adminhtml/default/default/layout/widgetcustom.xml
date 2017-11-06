@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+/**
+ * Magestore
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Magestore
+ * @package     Magestore_SolutionPartner
+ * @copyright   Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license     http://www.magestore.com/license-agreement.html
+ */
+-->
+<layout version="0.1.0">
+    <adminhtml_widgetcustom_widget_index>
+        <reference name="content">
+            <block type="widgetcustom/adminhtml_widget" name="adminhtml.widget.index" />
+        </reference>
+    </adminhtml_widgetcustom_widget_index>
+
+    <adminhtml_widgetcustom_widget_grid>
+        <block type="widgetcustom/adminhtml_widget_grid" name="adminhtml.widget.grid" />
+    </adminhtml_widgetcustom_widget_grid>
+
+    <adminhtml_widgetcustom_widget_edit>
+        <block type="widgetcustom/adminhtml_widget_edit" name="adminhtml.widget.edit" />
+    </adminhtml_widgetcustom_widget_edit>
+
+    <adminhtml_widgetcustom_widget_loadIndex>
+        <block name="widgetcustom_wysiwyg_widget" type="widgetcustom/adminhtml_widget_addwidget" output="toHtml" />
+    </adminhtml_widgetcustom_widget_loadIndex>
+
+    <adminhtml_widgetcustom_widget_loadoptions>
+        <block name="widgetcustom.wysiwyg_widget.options" type="widgetcustom/adminhtml_widget_addwidget_options" output="toHtml" />
+    </adminhtml_widgetcustom_widget_loadoptions>
+</layout>

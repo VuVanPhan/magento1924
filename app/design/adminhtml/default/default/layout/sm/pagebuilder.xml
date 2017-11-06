@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+	<adminhtml_pagebuilder_pagebuilder_index>
+		<update handle="editor" />
+		<reference name="content">
+			<block type="pagebuilder/adminhtml_pagebuilder" name="pagebuilder" />
+		</reference>
+	</adminhtml_pagebuilder_pagebuilder_index>
+
+	<adminhtml_pagebuilder_pagebuilder_grid>
+		<update handle="editor" />
+		<reference name="content">
+			<block type="pagebuilder/adminhtml_pagebuilder_grid" name="adminhtml.pagebuilder.grid" />
+		</reference>
+	</adminhtml_pagebuilder_pagebuilder_grid>
+
+	<adminhtml_pagebuilder_pagebuilder_edit>
+		<update handle="editor" />
+		<reference name="content">
+			<block type="pagebuilder/adminhtml_pagebuilder_edit" name="adminhtml.pagebuilder.edit" />
+		</reference>
+	</adminhtml_pagebuilder_pagebuilder_edit>
+
+	<adminhtml_pagebuilder_pagebuilder_indexWidget>
+		<update handle="editor" />
+		<reference name="content">
+			<block type="pagebuilder/adminhtml_pagebuilder_addwidget" name="pagebuilder_widget" output="toHtml" />
+		</reference>
+	</adminhtml_pagebuilder_pagebuilder_indexWidget>
+
+	<adminhtml_pagebuilder_pagebuilder_loadOptions>
+		<update handle="editor" />
+		<reference name="content">
+			<block name="pagebuilder.wysiwyg_widget.options" type="pagebuilder/adminhtml_pagebuilder_addwidget_options" output="toHtml" />
+		</reference>
+	</adminhtml_pagebuilder_pagebuilder_loadOptions>
+</layout>

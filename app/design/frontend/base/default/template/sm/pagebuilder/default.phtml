@@ -1,0 +1,13 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Vu Van Phan
+ * Date: 12-11-2015
+ * Time: 10:25
+ */
+$collection = $this->renderPageBuilder();
+
+if($collection->getId() && $collection->getStatus() == 1) {
+?>
+	<?php echo "<pre>"; var_dump($collection->getData()); ?>
+<?php } ?>

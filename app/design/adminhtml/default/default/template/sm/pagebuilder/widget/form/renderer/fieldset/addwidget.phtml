@@ -1,0 +1,79 @@
+<?php
+/**------------------------------------------------------------------------
+ * SM Page Builder - Version 1.0.0
+ * Copyright (c) 2015 YouTech Company. All Rights Reserved.
+ * @license - Copyrighted Commercial Software
+ * Author: YouTech Company
+ * Websites: http://www.magentech.com
+-------------------------------------------------------------------------*/
+?>
+
+<div class="pdm-widgets clearfix">
+    <div class="widget-info"></div>
+    <div class="group-buttons showinform pull-right" id="showinform">
+        <button id="toogle_list" title="Toggle List" type="button" class="action-default scalable save btn btn-info backtolist" data-ui-id="pagebuilder-widget-form-toggle-list-button">
+            <span>Toggle List</span>
+        </button>
+    </div>
+
+    <div class="widgets-filter" style="">
+        <div class="form-name has-success clearfix">
+            <label for="searchwidgets" class="col-lg-2 control-label">Filter By Name</label>
+            <div class="col-lg-10">
+                <input type="text" name="searchwidgets" id="searchwidgets">
+            </div>
+        </div>
+
+        <div class="form-group clearfix">
+            <label for="searchwidgets" class="col-lg-2 control-label">Filter By Group</label>
+            <div id="filterbygroups" class="col-lg-10">
+                <ul class="nav-group nav-pills">
+                    <li data-option="all" class="filter-option active">
+                        <a href="#">All<span class="badge"></span></a>
+                    </li>
+                    <!--				<li data-option="typo" class="filter-option">-->
+                    <!--					<a href="#">Typo<span class="badge"></span></a>-->
+                    <!--				</li>-->
+                    <!--				<li data-option="blog" class="filter-option">-->
+                    <!--					<a href="#">Blog<span class="badge"></span></a>-->
+                    <!--				</li>-->
+                    <!--				<li data-option="magento" class="filter-option">-->
+                    <!--					<a href="#">Magento<span class="badge"></span></a>-->
+                    <!--				</li>-->
+                    <!--				<li data-option="social" class="filter-option">-->
+                    <!--					<a href="#">Social<span class="badge"></span></a>-->
+                    <!--				</li>-->
+                    <!--				<li data-option="image" class="filter-option">-->
+                    <!--					<a href="#">Image<span class="badge"></span></a>-->
+                    <!--				</li>-->
+                    <!--				<li data-option="others" class="filter-option">-->
+                    <!--					<a href="#">Others<span class="badge"></span></a>-->
+                    <!--				</li>-->
+                    <!--				<li data-option="content" class="filter-option">-->
+                    <!--					<a href="#">Content<span class="badge"></span></a>-->
+                    <!--				</li>-->
+                    <!--				<li data-option="product" class="filter-option">-->
+                    <!--					<a href="#">Product<span class="badge"></span></a>-->
+                    <!--				</li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <ul id="pagebuilder_widget_form" class="widgets-list" style="">
+        <?php
+        foreach ($this->_getAvailableWidgets() as $data) {
+            ?>
+            <li class="pdm-wg-button col-sm-4" data-group="typo">
+                <div class="pdm-wg-content" id="pdm_<?php echo $data['code']; ?>" data-widget="<?php echo $data['code']; ?>" data-widgettype="<?php echo $data['type'] ?>">
+                    <div class="pdm-wg-icon pdm-icon-<?php echo $data['code']; ?>"></div>
+                    <div class="widget-title"><?php echo Mage::helper('pagebuilder')->__($data['name']); ?></div>
+                    <i class="widget-desc"><?php echo Mage::helper('pagebuilder')->__($data['description']); ?></i>
+                </div>
+            </li>
+            <?php
+        }
+        ?>
+    </ul>
+    <div class="clearfix"></div>
+</div>

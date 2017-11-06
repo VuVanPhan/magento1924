@@ -1,0 +1,223 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Vu Van Phan
+ * Date: 06-11-2015
+ * Time: 11:04
+ */
+?>
+<?php $_element = $this->getElement() ?>
+<?php if (!$_element->getNoDisplay()): ?>
+	<tr>
+		<td>
+			<div id="widgetcustom_content" class="buttons-set">
+				<?php echo $this->getWidgetButton() ?>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3" class="value">
+			<div class="container sm-pagebuilder">
+				<div id="mypagebuilder">
+					<div id="add-row-first" class="add-row-first">
+						<a title="New Row" class="pdm-addRow add-12 pull-center"><span class="fa fa-bars"></span>&nbsp;</a>
+					</div>
+				</div>
+			</div>
+		</td>
+	</tr>
+	<script>
+		//<![CDATA[
+		jQuery(document).ready(function($){
+			$("#mypagebuilder").pagedesignmanager({
+				/*
+				 General Options---------------
+				 */
+				// Debug to console
+				debug: 0,
+
+				// URL to save to
+				remoteURL: "/replace-with-your-url",
+
+
+				/*
+				 Control Bar---------------
+				 */
+
+				// Array of buttons for row templates
+				controlButtons: [[12], [6,6], [4,4,4], [3,3,3,3], [2,2,2,2,2,2], [2,8,2], [4,8], [8,4]],
+
+				// Default control button class
+				controlButtonClass: "tiny button",
+
+
+				/*
+				 General editing classes---------------
+				 */
+
+				// generic float left and right
+				pdmFloatLeft: "left",
+				pdmFloatRight: "right",
+				pdmBtnGroup:  "button-group",
+				pdmDangerClass: "alert",
+				// Control bar RH dropdown markup
+				controlAppend: "<div class='col-lg-5'>" +
+				"<div class='label-devices'><label for='pagebuilder-devices'>Devices</label></div>" +
+				"<div class='button-group left'>" +
+				"<button title='Edit Source Code' type='button' class='button tiny pdm-edit-mode'><span class='fa fa-code'></span></button>" +
+				"<button title='Preview' type='button' class='button tiny pdm-preview'><span class='fa fa-eye'></span></button>" +
+				"<div class='button-group right pdm-layout-mode'>" +
+				"<a class='button tiny' data-width='auto' title='Desktop'><span class='fa fa-desktop'></span></a>" +
+				"<a class='button tiny' title='Laptop' data-width='992'><span class='fa fa-laptop'></span></a>" +
+				"<a class='button tiny' title='Tablet' data-width='768'><span class='fa fa-tablet'></span></a>" +
+				"<a class='button tiny' title='Phone' data-width='640'><span class='fa fa-mobile-phone'></span></a>" +
+				"</div>" +
+				"</div>" +
+				"</div>" +
+				"<div class='col-lg-3'>" +
+				"<div class='label-grid'><label for='pagebuilder-grid'>Enable Grid</label></div>" +
+				"<div class='button-group center'>" +
+				"<button title='Enable Grid' type='button' class='button tiny pdm-enable-grid'><span class='fa fa-check'></span></button>" +
+				"<button title='Disable Grid' type='button' class='button tiny pdm-disable-grid'><span class='fa fa-times'></span></button>" +
+				"</div>" +
+				"</div>",
+
+
+
+				/*
+				 Rows---------------
+				 */
+				// class of background element when sorting rows
+				rowSortingClass: "panel callout radius",
+
+				// Buttons at the top of each row
+				rowButtonsPrepend: [
+					{
+						title:"Move",
+						element: "a",
+						btnClass: "pdm-moveRow pull-left",
+						iconClass: "fa fa-arrows "
+					},
+					{
+						title:"New Row",
+						element: "a",
+						btnClass: "pdm-addRow add-12 pull-left",
+						iconClass: "fa fa-bars"
+					},
+					{
+						title:"New Column",
+						element: "a",
+						btnClass: "pdm-addColumn left",
+						iconClass: "fa fa-plus"
+					},
+					{
+						title:"Remove row",
+						element: "a",
+						btnClass: "right pdm-removeRow",
+						iconClass: "fa fa-trash-o"
+					},
+					{
+						title:"Duplicate",
+						element: "a",
+						btnClass: "right pdm-duplicate",
+						iconClass: "fa fa-files-o"
+					},
+					{
+						title:"Row Settings",
+						element: "a",
+						btnClass: "right pdm-rowSettings",
+						iconClass: "fa fa-cog"
+					},
+					{
+						title:"Edit Row Short Code",
+						element: "a",
+						btnClass: "right pdm-editRowShortcode",
+						iconClass: "fa fa-pencil-square-o"
+					}
+				],
+
+				// CUstom row classes - add your own to make them available in the row settings
+				rowCustomClasses: ["panel","callout","radius"],
+
+				/*
+				 Columns--------------
+				 */
+				// Adds any missing classes in columns for muti-device support.
+				addResponsiveClasses: true,
+
+				// Additional column class to add (foundation needs columns, bs3 doesn't)
+				colAdditionalClass: "column",
+
+				// Generic desktop size layout class
+//				colDesktopClass: "large-",
+				colDesktopClass: "col-lg-",
+
+				// Generic Laptop size layout class
+//				colLaptopClass: "medium-",
+				colLaptopClass: "col-md-",
+
+				// Generic tablet size layout class
+//				colTabletClass: "small-",
+				colTabletClass: "col-sm-",
+
+				// Generic phone size layout class
+//				colPhoneClass: "xsmall-",
+				colPhoneClass: "col-xs-",
+
+				// Wild card column desktop selector
+//				colDesktopSelector: "div[class*=large]",
+				colDesktopSelector: "div[class*=col-lg]",
+
+				// Wild card column laptop selector
+//				colLaptopSelector: "div[class*=medium]",
+				colLaptopSelector: "div[class*=col-md]",
+
+				// Wildcard column tablet selector
+//				colTabletSelector: "div[class*=small]",
+				colTabletSelector: "div[class*=col-sm]",
+
+				// Wildcard column phone selector
+//				colPhoneSelector: "div[class*=xsmall]",
+				colPhoneSelector: "div[class*=col-xs]",
+
+				// Buttons to prepend to each column
+				colButtonsPrepend: [
+					{
+						title:"Column Settings",
+						element: "a",
+						btnClass: "left pdm-colSettings",
+						iconClass: "fa fa-pencil-square-o"
+					},
+					{
+						title:"Add Nested Row",
+						element: "a",
+						btnClass: "left pdm-addRow",
+						iconClass: "fa fa-plus-square"
+					},
+					{
+						title:"Remove Column",
+						element: "a",
+						btnClass: "left pdm-removeCol",
+						iconClass: "fa fa-trash-o"
+					},
+					{
+						title:"Add Widget",
+						element: "a",
+						btnClass: "right pdm-addWidget",
+						iconClass: "fa fa-cog"
+					}
+				],
+
+				// Maximum column span value: if you've got a 24 column grid via customised bootstrap, you could set this to 24.
+				colMax: 12,
+
+				// Column resizing +- value: this is also the colMin value, as columns won't be able to go smaller than this number (otherwise you hit zero and all hell breaks loose)
+				colResizeStep: 1,
+
+				// link popup add widget
+				addwidget: '<?php echo $this->getAddWidgetUrl(); ?>'
+			});
+		});
+		//]]>
+	</script>
+<?php endif; ?>

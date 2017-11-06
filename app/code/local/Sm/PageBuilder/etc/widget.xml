@@ -1,0 +1,15 @@
+<widgets>
+	<pagebuilder type="pagebuilder/page_preview" translate="name description">
+		<name>SM Page Builder</name>
+		<description>Adds a new page to block / page</description>
+		<parameters>
+			<page_id translate="label">
+				<label>Page ID</label>
+				<visible>1</visible>
+				<required>1</required>
+				<type>select</type>
+				<source_model>pagebuilder/system_page</source_model>
+			</page_id>
+		</parameters>
+	</pagebuilder>
+</widgets>

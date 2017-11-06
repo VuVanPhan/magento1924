@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+/**
+ * Magestore
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Magestore
+ * @package     Magestore_SolutionPartner
+ * @copyright   Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license     http://www.magestore.com/license-agreement.html
+ */
+-->
+<config>
+    <menu>
+        <widgetcustom translate="title" module="widgetcustom">
+            <title>Widget Custom</title>
+            <sort_order>100</sort_order>
+            <children>
+                <widget module="widgetcustom" translate="title">
+                    <title>Widget Manage</title>
+                    <sort_order>1</sort_order>
+                    <action>adminhtml/widgetcustom_widget</action>
+                </widget>
+            </children>
+        </widgetcustom>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <widgetcustom module="widgetcustom" translate="title">
+                                        <title>Widget Custom</title>
+                                        <sort_order>100</sort_order>
+                                    </widgetcustom>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <widgetcustom module="widgetcustom" translate="title">
+                        <title>Widget Custom</title>
+                        <sort_order>100</sort_order>
+                        <children>
+                            <widget module="widgetcustom" translate="title">
+                                <title>Widget Manage</title>
+                                <sort_order>1</sort_order>
+                            </widget>
+                        </children>
+                    </widgetcustom>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
