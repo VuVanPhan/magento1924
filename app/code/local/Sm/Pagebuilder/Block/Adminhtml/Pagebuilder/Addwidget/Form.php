@@ -9,7 +9,7 @@ class Sm_Pagebuilder_Block_Adminhtml_Pagebuilder_Addwidget_Form extends Mage_Adm
     {
         $form = new Varien_Data_Form();
 
-        $fieldset = $form->addFieldset('basewidget_fieldset', array(
+        $fieldset = $form->addFieldset('base_fieldset', array(
             'legend'    => $this->helper('pagebuilder')->__('Widget')
         ));
 

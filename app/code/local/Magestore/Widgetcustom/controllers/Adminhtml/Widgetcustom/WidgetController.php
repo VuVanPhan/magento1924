@@ -72,18 +72,7 @@ class Magestore_Widgetcustom_Adminhtml_Widgetcustom_WidgetController extends Mag
             }
             Mage::register('widget_data', $model);
 
-            $this->loadLayout();
-            $this->_setActiveMenu('adminhtml/widgetcustom_widget');
-
-            $this->_addBreadcrumb(
-                Mage::helper('adminhtml')->__('Widget Manager'),
-                Mage::helper('adminhtml')->__('Wisget Manager')
-            );
-            $this->_addBreadcrumb(
-                Mage::helper('adminhtml')->__('Widget News'),
-                Mage::helper('adminhtml')->__('Widget News')
-            );
-
+            $this->_initAction();
             if ($model->getId())
                 $this->_title($model->getName());
             else

@@ -1417,6 +1417,7 @@ i.fa
 {
 	position: relative;
 	height: 100%;
+	background: pink;
 }
 
 #pagebuilder_widget_form li.widget-title

@@ -74,8 +74,6 @@ class Sm_Pagebuilder_Block_Adminhtml_Pagebuilder_Edit_Tab_General extends Mage_A
 				'value'     => $model->getData('store_id')?$model->getData('store_id'):'0',
 				'disabled'  => $isElementDisabled
 			));
-//			$renderer = $this->getLayout()->createBlock('adminhtml/widget_store_switcher_form_renderer_fieldset_element');
-//			$field->setRenderer($renderer);
 		}
 		else {
 			$fieldset->addField('store_id', 'hidden', array(

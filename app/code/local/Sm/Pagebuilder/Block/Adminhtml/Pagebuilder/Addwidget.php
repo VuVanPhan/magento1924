@@ -24,13 +24,13 @@ class Sm_Pagebuilder_Block_Adminhtml_Pagebuilder_Addwidget extends Mage_Adminhtm
         $this->_updateButton('save', 'id', 'insert_button');
         $this->_updateButton('save', 'onclick', 'pbWidget.insertWidget()');
 
-        $this->_formScripts[] = 'pbWidget = new WysiwygWidgetCustom.Widget('
-            . '"widget_options_form", "select_widget_type", "widget_options", "'
-            . $this->getUrl('*/*/loadOptions') .'", "' . $this->getRequest()->getParam('widget_target_id') . '");';
-//
-//        $this->_formScripts[] = 'pbWidget = new _PdmWysiwygWidget.Widget('
+//        $this->_formScripts[] = 'pbWidget = new WysiwygWidgetCustom.Widget('
 //            . '"widget_options_form", "select_widget_type", "widget_options", "'
-//            . $this->getUrl('*/*/loadOptions') . '", "' . $this->getRequest()->getParam('widget_target_id') . '");';
+//            . $this->getUrl('*/*/loadOptions') .'", "' . $this->getRequest()->getParam('widget_target_id') . '");';
+//
+        $this->_formScripts[] = 'pbWidget = new _PdmWysiwygWidget.Widget('
+            . '"widget_options_form", "select_widget_type", "widget_options", "'
+            . $this->getUrl('*/*/loadOptions') . '", "' . $this->getRequest()->getParam('widget_target_id') . '");';
 
 //        $this->_formScripts[] = 'pbWidget = new _PdmWysiwygWidget.Widget('
 //            . '"widget_options_form", "select_widget_type", "widget_options", "'

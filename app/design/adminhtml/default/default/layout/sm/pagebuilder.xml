@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Magestore
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Magestore
+ * @package     Magestore_SolutionPartner
+ * @copyright   Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license     http://www.magestore.com/license-agreement.html
+ */
+-->
 <layout version="0.1.0">
 	<adminhtml_pagebuilder_pagebuilder_index>
 		<reference name="content">
@@ -12,15 +33,11 @@
 		</reference>
 	</adminhtml_pagebuilder_pagebuilder_grid>
 
-	<adminhtml_pagebuilder_pagebuilder_indexWidget>
-		<reference name="content">
-			<block type="pagebuilder/adminhtml_pagebuilder_addwidget" name="adminhtml.pagebuilder_addwidget" output="toHtml" />
-		</reference>
-	</adminhtml_pagebuilder_pagebuilder_indexWidget>
+	<adminhtml_pagebuilder_pagebuilder_loadindex>
+		<block type="pagebuilder/adminhtml_pagebuilder_addwidget" name="adminhtml.pagebuilder_addwidget" output="toHtml" />
+	</adminhtml_pagebuilder_pagebuilder_loadindex>
 
-	<!--<adminhtml_pagebuilder_pagebuilder_loadOptions>-->
-		<!--<reference name="content">-->
-			<!--<block type="pagebuilder/adminhtml_pagebuilder_addwidget_options" name="pagebuilder.wysiwyg_widget.options" output="toHtml" />-->
-		<!--</reference>-->
-	<!--</adminhtml_pagebuilder_pagebuilder_loadOptions>-->
+	<adminhtml_pagebuilder_pagebuilder_loadoptions>
+		<block name="pagebuilder.wysiwyg_widget.options" type="pagebuilder/adminhtml_pagebuilder_addwidget_options" output="toHtml" />
+	</adminhtml_pagebuilder_pagebuilder_loadoptions>
 </layout>

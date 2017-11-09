@@ -12,7 +12,7 @@ class Sm_Pagebuilder_Block_Adminhtml_Pagebuilder_Form_Renderer_Fieldset_Element 
 
 	protected function _construct()
 	{
-		$this->setTemplate('sm/pagebuilder/widget/form/renderer/fieldset/element.phtml');
+		$this->setTemplate('sm/pagebuilder/widget/form/renderer/fieldset/content.phtml');
 	}
 
 	public function getElement()
@@ -24,5 +24,9 @@ class Sm_Pagebuilder_Block_Adminhtml_Pagebuilder_Form_Renderer_Fieldset_Element 
 	{
 		$this->_element = $element;
 		return $this->toHtml();
+	}
+
+	public function getAddWidgetUrl() {
+		return $this->getUrl('adminhtml/pagebuilder_pagebuilder/loadIndex');
 	}
 }

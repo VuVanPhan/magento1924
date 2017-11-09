@@ -138,9 +138,6 @@ class Sm_Pagebuilder_Adminhtml_Pagebuilder_PagebuilderController extends Mage_Ad
 		return $data;
 	}
 	public function saveAction(){
-		echo "<pre>";
-		var_dump($this->getRequest()->getPost());
-		die();
 		if ($data = $this->getRequest()->getPost()) {
 			$filterData = $this->_filterData();
 			$model = Mage::getModel('pagebuilder/page');
@@ -223,8 +220,6 @@ class Sm_Pagebuilder_Adminhtml_Pagebuilder_PagebuilderController extends Mage_Ad
 			}
 		}
 		Mage::getSingleton('adminhtml/session')->addError(Mage::helper('pagebuilder')->__('Unable to find item to save'));
-//		$url = $this->getUrl('*/*/');
-//		$this->getResponse()->setBody($url);
 		$this->_redirect('*/*/');
 	}
 
@@ -259,40 +254,6 @@ class Sm_Pagebuilder_Adminhtml_Pagebuilder_PagebuilderController extends Mage_Ad
 		$this->getResponse()->setRedirect($this->getUrl('*/*/', array('_current'=>true, 'id'=>null)));
 	}
 
-//	public function duplicateAction(){
-//		if($page_id = $this->getRequest()->getParam('id'))
-//		{
-//			$model = Mage::getModel('pagebuilder/page')->load($page_id);
-//			$data = $model->getData();
-//			if ($data['page_id'])
-//			{
-//				unset($data['page_id']);
-//			}
-//			$model->setData($data, false);
-//			try{
-//				$model->save();
-//				Mage::getSingleton('adminhtml/session')->addSuccess(
-//					Mage::helper('adminhtml')->__(
-//						'Total of %d record(s) were successfully duplicate', count($page_id)
-//					)
-//				);
-//
-//				$this->getResponse()->setRedirect($this->getUrl('*/*/edit', array('_current'=>true, 'id'=>$model->getId())));
-//			}
-//			catch (Mage_Core_Exception $e){
-//				Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
-//				$this->getResponse()->setRedirect($this->getUrl('*/*/edit', array('_current'=>true)));
-//				return;
-//			}
-//			catch(Exception $e)
-//			{
-//				Mage::getSingleton('adminhtml/session')->addError(Mage::helper('pagebuilder')->__('An error occurred while trying to duplicate the items.'));
-//				$this->getResponse()->setRedirect($this->getUrl('*/*/edit', array('_current'=>true)));
-//				return;
-//			}
-//		}
-//	}
-
 	public function massDeleteAction(){
 		if($page_id = $this->getRequest()->getParam('page_id'))
 		{
@@ -325,42 +286,6 @@ class Sm_Pagebuilder_Adminhtml_Pagebuilder_PagebuilderController extends Mage_Ad
 		}
 		$this->getResponse()->setRedirect($this->getUrl('*/*/', array('_current'=>true, 'id'=>null)));
 	}
-
-//	public function massDuplicateAction(){
-//		if($page_id = $this->getRequest()->getParam('page_id'))
-//		{
-//			try{
-//				foreach($page_id as $b)
-//				{
-//					$model = Mage::getModel('pagebuilder/page')->load($b);
-//					$data = $model->getData();
-//					if ($data['page_id'])
-//					{
-//						unset($data['page_id']);
-//					}
-//					$model->setData($data, false);
-//					$model->save();
-//				}
-//				Mage::getSingleton('adminhtml/session')->addSuccess(
-//					Mage::helper('adminhtml')->__(
-//						'Total of %d record(s) were successfully duplicate', count($page_id)
-//					)
-//				);
-//			}
-//			catch (Mage_Core_Exception $e){
-//				Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
-//				$this->getResponse()->setRedirect($this->getUrl('*/*/edit', array('_current'=>true)));
-//				return;
-//			}
-//			catch(Exception $e)
-//			{
-//				Mage::getSingleton('adminhtml/session')->addError(Mage::helper('pagebuilder')->__('An error occurred while trying to duplicate the items.'));
-//				$this->getResponse()->setRedirect($this->getUrl('*/*/edit', array('_current'=>true)));
-//				return;
-//			}
-//		}
-//		$this->getResponse()->setRedirect($this->getUrl('*/*/', array('_current'=>true, 'id'=>null)));
-//	}
 
 	public function massStatusAction(){
 		if($page_id = $this->getRequest()->getParam('page_id')) {
@@ -408,7 +333,7 @@ class Sm_Pagebuilder_Adminhtml_Pagebuilder_PagebuilderController extends Mage_Ad
 	/**
 	 * Wisywyg widget plugin main page
 	 */
-	public function indexWidgetAction() {
+	public function loadIndexAction() {
 		$this->loadLayout('overlay_popup');
         $block = $this->getLayout()->createBlock('pagebuilder/adminhtml_pagebuilder_addwidget', 'adminhtml_pagebuilder_addwidget');
         $this->_addContent($block);

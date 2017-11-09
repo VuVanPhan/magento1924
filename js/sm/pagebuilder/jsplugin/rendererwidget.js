@@ -5,7 +5,6 @@
  * Author: YouTech Company
  * Websites: http://www.magentech.com
  -------------------------------------------------------------------------*/
-"use strict;"
 
 var _PdmWidgetTools = {
 	getDivHtml: function(id, html) {
@@ -23,19 +22,6 @@ var _PdmWidgetTools = {
 			}
 		}
 	},
-
-	/*getMaxZIndex: function() {
-		var max = 0, i;
-		var cn = document.body.childNodes;
-		for (i = 0; i < cn.length; i++) {
-			var el = cn[i];
-			var zIndex = el.nodeType == 1 ? parseInt(el.style.zIndex, 10) || 0 : 0;
-			if (zIndex < 10000) {
-				max = Math.max(max, zIndex);
-			}
-		}
-		return max + 10;
-	},*/
 
 	openDialog: function(widgetUrl) {
 		if ($('widget_window') && typeof(Windows) != 'undefined') {
@@ -108,7 +94,7 @@ _PdmWysiwygWidget.Widget.prototype = {
 		if(typeof(jQuery) == "undefined")
 			return;
 
-		var $wwidgets = jQuery("#basewidget_fieldset");
+		var $wwidgets = jQuery("#base_fieldset");
 		var $obj = this;
 		jQuery(".form-list", $wwidgets).hide();
 		jQuery(".pdm-wg-button > div", $wwidgets).click(function(){
@@ -220,7 +206,7 @@ _PdmWysiwygWidget.Widget.prototype = {
 
 							if(typeof(jQuery) != "undefined") {
 								jQuery("#widget_options_form > .entry-edit-head").hide();
-								jQuery("#basewidget_fieldset").hide();
+								jQuery("#base_fieldset").hide();
 							}
 						} else {
 							this.switchOptionsContainer(optionsContainerId);
@@ -243,7 +229,6 @@ _PdmWysiwygWidget.Widget.prototype = {
 	},
 
 	insertWidget: function() {
-		console.log('dfdf');
 		widgetOptionsForm = new varienForm(this.formEl);
 		if(widgetOptionsForm.validator && widgetOptionsForm.validator.validate() || !widgetOptionsForm.validator){
 			var formElements = [];
@@ -282,7 +267,6 @@ _PdmWysiwygWidget.Widget.prototype = {
 
 						this.updateContent(transport.responseText);
 					} catch(e) {
-						console.log(e);
 						alert(e.message);
 					}
 				}.bind(this)

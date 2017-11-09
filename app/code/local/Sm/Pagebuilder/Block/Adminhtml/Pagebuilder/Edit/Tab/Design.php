@@ -78,7 +78,7 @@ class Sm_Pagebuilder_Block_Adminhtml_Pagebuilder_Edit_Tab_Design extends Mage_Ad
 			'disabled'  => $isElementDisabled,
 		));
 
-		$renderer = $this->getLayout()->createBlock('pagebuilder/adminhtml_pagebuilder_form_renderer_fieldset_content')
+		$renderer = $this->getLayout()->createBlock('pagebuilder/adminhtml_pagebuilder_form_renderer_fieldset_element')
 			->setTemplate('sm/pagebuilder/widget/form/renderer/fieldset/content.phtml');
 		$contentField->setRenderer($renderer);
 

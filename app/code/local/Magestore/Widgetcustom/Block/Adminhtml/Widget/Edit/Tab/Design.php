@@ -23,15 +23,13 @@ class Magestore_Widgetcustom_Block_Adminhtml_Widget_Edit_Tab_Design extends Mage
             'class' => 'no-spacing',
             'legend'=>Mage::helper('widgetcustom')->__('Widget Information')
         ));
+
         $fieldset->addField('name', 'text', array(
             'label'         => Mage::helper('widgetcustom')->__('Name'),
             'class'         => 'required-entry',
             'required'      => true,
             'name'          => 'name',
         ));
-        echo "<pre>";
-        var_dump($model->getData());
-        die('54455555');
 
         $contentField = $fieldset->addField('content', 'editor', array(
             'name'      => 'content',
@@ -40,23 +38,13 @@ class Magestore_Widgetcustom_Block_Adminhtml_Widget_Edit_Tab_Design extends Mage
 //            'disabled'  => $isElementDisabled,
         ));
 
-        echo "<pre>";
-        var_dump($model->getData());
-        die('54455555');
         // Setting custom renderer for content field to remove label column
         $renderer = $this->getLayout()->createBlock('widgetcustom/adminhtml_custom_form_renderer_fieldset_element')
             ->setTemplate('widgetcustom/widget/page/edit/form/renderer/content.phtml');
         $contentField->setRenderer($renderer);
-
-        echo "<pre>";
-        var_dump($model->getData());
-        die();
-        if ($model->getWidgetId())
-        {
-            $form->setValues($model->getData());
-        }
+        
+        $form->setValues($model);
         $this->setForm($form);
-
         return parent::_prepareForm();
     }
 
