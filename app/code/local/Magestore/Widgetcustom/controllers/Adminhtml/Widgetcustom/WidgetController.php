@@ -90,7 +90,8 @@ class Magestore_Widgetcustom_Adminhtml_Widgetcustom_WidgetController extends Mag
                 $this->_title(Mage::helper('adminhtml')->__('Add New Widget'));
 
             $this->getLayout()->getBlock('head')->setCanLoadExtJs(true);
-            $this->_addContent($this->getLayout()->createBlock('widgetcustom/adminhtml_widget_edit'));
+            $this->_addLeft($this->getLayout()->createBlock('widgetcustom/adminhtml_widget_edit_tabs'))
+                ->_addContent($this->getLayout()->createBlock('widgetcustom/adminhtml_widget_edit'));
 
             $this->renderLayout();
         } else {

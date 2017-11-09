@@ -35,18 +35,6 @@ class Magestore_Widgetcustom_Block_Adminhtml_Widget_Edit_Form extends Mage_Admin
      */
     protected function _prepareForm()
     {
-        /** @var $model Magestore_Widgetcustom_Model_Widget */
-        $model = Mage::registry('cms_page');
-
-        /*
-         * Checking if user have permissions to save information
-         */
-        if ($this->_isAllowedAction('save')) {
-            $isElementDisabled = false;
-        } else {
-            $isElementDisabled = true;
-        }
-
         $form = new Varien_Data_Form(array(
             'id'        => 'edit_form',
             'action'    => $this->getUrl('*/*/save', array(
@@ -56,32 +44,7 @@ class Magestore_Widgetcustom_Block_Adminhtml_Widget_Edit_Form extends Mage_Admin
             'enctype'   => 'multipart/form-data'
         ));
 
-        $fieldset = $form->addFieldset('link_form', array(
-            'class' => 'no-spacing',
-            'legend'=>Mage::helper('widgetcustom')->__('Widget Information')
-        ));
-
-        $fieldset->addField('name', 'text', array(
-            'label'         => Mage::helper('widgetcustom')->__('Name'),
-            'class'         => 'required-entry',
-            'required'      => true,
-            'name'          => 'name',
-        ));
-
-        $contentField = $fieldset->addField('content', 'editor', array(
-            'name'      => 'content',
-            'style'     => 'height:36em;width:1173px',
-            'required'  => true,
-            'disabled'  => $isElementDisabled,
-        ));
-
-        // Setting custom renderer for content field to remove label column
-        $renderer = $this->getLayout()->createBlock('widgetcustom/adminhtml_custom_form_renderer_fieldset_element')
-            ->setTemplate('widgetcustom/widget/page/edit/form/renderer/content.phtml');
-        $contentField->setRenderer($renderer);
-
         $form->setUseContainer(true);
-        $form->setValues($model);
         $this->setForm($form);
         return parent::_prepareForm();
     }
